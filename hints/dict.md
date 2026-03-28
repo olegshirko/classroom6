@@ -75,7 +75,7 @@ if item_id in db:
 
 ```python
 max(db.keys(), default=0)
-# default=0 — если db пустой, вернёт 0, а не ошибку
+# default=0 - если db пустой, вернёт 0, а не ошибку
 ```
 
 ---
@@ -129,7 +129,7 @@ total_value = sum(item.price for item in db.values())
 
 ## Ключ vs значение - важно
 
-В этой задаче ключ словаря — это `id` товара:
+В этой задаче ключ словаря - это `id` товара:
 
 ```python
 db = {
@@ -165,7 +165,7 @@ users_db: dict[int, UserInDB] = {...}
 cart_db: dict[int, CartItemInDB] = {...}
 ```
 
-Работа с ними одинаковая — используй те же операции dict.
+Работа с ними одинаковая - используй те же операции dict.
 
 ---
 
@@ -176,7 +176,7 @@ class User(BaseModel):
     name: str
     email: str
     password: str
-    is_admin: bool = False  # False — обычный пользователь, True — админ
+    is_admin: bool = False  # False - обычный пользователь, True - админ
 
 # Пример данных
 users_db = {
@@ -224,7 +224,7 @@ email = authorization.split(" ")[1]  # "admin@shop.com"
 
 ## Поиск пользователя по email (не по id)
 
-В `users_db` ключ — это `id`, но нам нужно найти по `email`:
+В `users_db` ключ - это `id`, но нам нужно найти по `email`:
 
 ```python
 def find_user_by_email(email: str):
@@ -282,7 +282,7 @@ def create_item(item: Item, authorization: Optional[str] = Header(None)):
     if not user:
         raise HTTPException(status_code=401, detail="User not found")
     
-    # 3. Проверить, что пользователь — админ
+    # 3. Проверить, что пользователь - админ
     if not user.is_admin:
         raise HTTPException(status_code=403, detail="Admin access required")
     

@@ -8,7 +8,7 @@
 
 ```
 classroom6/
-├── main.py          # API — здесь весь твой код
+├── main.py          # API - здесь весь твой код
 ├── Dockerfile       # описание образа
 ├── requirements.txt # зависимости Python
 ├── tests/           # тесты
@@ -177,15 +177,15 @@ curl -X DELETE http://localhost:8000/cart/items/1 \
 
 # === Ошибки ===
 
-# Несуществующий товар — 404
+# Несуществующий товар - 404
 curl http://localhost:8000/items/999
 
-# Создание без авторизации — 401
+# Создание без авторизации - 401
 curl -X POST http://localhost:8000/items \
      -H "Content-Type: application/json" \
      -d '{"name": "Товар", "price": 100}'
 
-# Создание с токеном клиента — 403
+# Создание с токеном клиента - 403
 curl -X POST http://localhost:8000/items \
      -H "Content-Type: application/json" \
      -H "Authorization: Bearer customer@shop.com" \
@@ -210,13 +210,13 @@ pytest tests/test_main.py::test_healthcheck -v
 
 Упаковать готовый API в Docker-образ и запустить его в контейнере.
 
-### Шаг 1 — собери образ
+### Шаг 1 - собери образ
 
 ```bash
 docker build -t shop-api .
 ```
 
-### Шаг 2 — запусти контейнер
+### Шаг 2 - запусти контейнер
 
 ```bash
 docker run -d -p 8000:8000 shop-api
@@ -224,7 +224,7 @@ docker run -d -p 8000:8000 shop-api
 
 Проверь, что API работает: `http://localhost:8000/items`
 
-### Шаг 3 — изучи базовые команды Docker
+### Шаг 3 - изучи базовые команды Docker
 
 ```bash
 # Посмотреть запущенные контейнеры
@@ -264,11 +264,4 @@ docker images
 - [ ] GET `/cart` без авторизации возвращает 401
 - [ ] Корзина: добавление, удаление, подсчёт суммы работают
 - [ ] Все 60 тестов проходят
-
-**Задание 2 (Docker):**
-- [ ] `docker build` завершается без ошибок
-- [ ] `docker run -p 8000:8000 shop-api` запускает API
-- [ ] `http://localhost:8000/items` открывается в браузере — почему?
-- [ ] После остановки контейнера данные пропадают — почему?
-
 ---

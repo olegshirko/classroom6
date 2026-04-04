@@ -4,6 +4,32 @@
 
 ---
 
+## ⚠️ Обновление репозитория
+
+Если ты уже начал работать над заданием, обнови свой репозиторий:
+
+```bash
+# 1. Добавь template repo как источник обновлений
+git remote add template https://github.com/Python-Course-2026/python-course-2026-classroom-15-27-dict-classroom6.git
+
+# 2. Скачай изменения
+git fetch template
+
+# 3. Слей изменения со своей веткой
+git merge template/master --allow-unrelated-histories
+
+# Если возникнут конфликты — разреши их, затем:
+git add .
+git commit -m "Merge template updates"
+
+# 4. Отправь изменения в свой репозиторий
+git push
+```
+
+Если конфликтов нет — всё пройдёт автоматически. После этого у тебя появятся новые файлы (`hints/types.md`) и обновлённые тесты.
+
+---
+
 ## Структура проекта
 
 ```

@@ -189,10 +189,10 @@ python -m venv .venv
 source .venv/bin/activate  # Windows: .venv\Scripts\activate
 
 # Установить зависимости
-pip install -r requirements.txt
+pip install --only-binary :all: -r requirements.txt   
 
 # Запустить
-uvicorn main:app -reload
+uvicorn main:app --reload
 ```
 
 После запуска открой в браузере:
